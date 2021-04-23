@@ -1,0 +1,25 @@
+﻿  MathLibrary.cpp
+D:\ИСП\lab4task2\Dll1\Dll1\MathLibrary.cpp(5,1): warning C4273: Factorial: несовместимое связывание dll
+D:\ИСП\lab4task2\Dll1\Dll1\MathLibrary.h(10,37): message : см. предыдущее определение "Factorial"
+D:\ИСП\lab4task2\Dll1\Dll1\MathLibrary.cpp(17,1): warning C4273: Pow: несовместимое связывание dll
+D:\ИСП\lab4task2\Dll1\Dll1\MathLibrary.h(15,37): message : см. предыдущее определение "Pow"
+D:\ИСП\lab4task2\Dll1\Dll1\MathLibrary.cpp(28,1): warning C4273: Module: несовместимое связывание dll
+D:\ИСП\lab4task2\Dll1\Dll1\MathLibrary.h(9,37): message : см. предыдущее определение "Module"
+D:\ИСП\lab4task2\Dll1\Dll1\MathLibrary.cpp(34,1): warning C4273: Sin: несовместимое связывание dll
+D:\ИСП\lab4task2\Dll1\Dll1\MathLibrary.h(11,37): message : см. предыдущее определение "Sin"
+D:\ИСП\lab4task2\Dll1\Dll1\MathLibrary.cpp(48,1): warning C4273: Cos: несовместимое связывание dll
+D:\ИСП\lab4task2\Dll1\Dll1\MathLibrary.h(12,37): message : см. предыдущее определение "Cos"
+D:\ИСП\lab4task2\Dll1\Dll1\MathLibrary.cpp(59,1): warning C4273: Tan: несовместимое связывание dll
+D:\ИСП\lab4task2\Dll1\Dll1\MathLibrary.h(13,37): message : см. предыдущее определение "Tan"
+D:\ИСП\lab4task2\Dll1\Dll1\MathLibrary.cpp(64,1): warning C4273: Cot: несовместимое связывание dll
+D:\ИСП\lab4task2\Dll1\Dll1\MathLibrary.h(14,37): message : см. предыдущее определение "Cot"
+D:\ИСП\lab4task2\Dll1\Dll1\MathLibrary.cpp(69,1): warning C4273: Addition: несовместимое связывание dll
+D:\ИСП\lab4task2\Dll1\Dll1\MathLibrary.h(16,37): message : см. предыдущее определение "Addition"
+D:\ИСП\lab4task2\Dll1\Dll1\MathLibrary.cpp(74,1): warning C4273: Difference: несовместимое связывание dll
+D:\ИСП\lab4task2\Dll1\Dll1\MathLibrary.h(17,37): message : см. предыдущее определение "Difference"
+D:\ИСП\lab4task2\Dll1\Dll1\MathLibrary.cpp(79,1): warning C4273: Multiplication: несовместимое связывание dll
+D:\ИСП\lab4task2\Dll1\Dll1\MathLibrary.h(18,37): message : см. предыдущее определение "Multiplication"
+D:\ИСП\lab4task2\Dll1\Dll1\MathLibrary.cpp(84,1): warning C4273: Devision: несовместимое связывание dll
+D:\ИСП\lab4task2\Dll1\Dll1\MathLibrary.h(19,37): message : см. предыдущее определение "Devision"
+     Создается библиотека D:\ИСП\lab4task2\Dll1\Debug\Dll1.lib и объект D:\ИСП\lab4task2\Dll1\Debug\Dll1.exp
+  Dll1.vcxproj -> D:\ИСП\lab4task2\Dll1\Debug\Dll1.dll
