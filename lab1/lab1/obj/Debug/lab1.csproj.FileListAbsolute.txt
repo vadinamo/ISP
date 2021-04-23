@@ -1,0 +1,6 @@
+/Users/vadinamo/Documents/исп/lab1/lab1/bin/Debug/lab1.exe
+/Users/vadinamo/Documents/исп/lab1/lab1/bin/Debug/lab1.pdb
+/Users/vadinamo/Documents/исп/lab1/lab1/obj/Debug/lab1.csprojAssemblyReference.cache
+/Users/vadinamo/Documents/исп/lab1/lab1/obj/Debug/lab1.csproj.CoreCompileInputs.cache
+/Users/vadinamo/Documents/исп/lab1/lab1/obj/Debug/lab1.exe
+/Users/vadinamo/Documents/исп/lab1/lab1/obj/Debug/lab1.pdb
