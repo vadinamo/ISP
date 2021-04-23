@@ -1,8 +1,0 @@
-{
-  "runtimeOptions": {
-    "additionalProbingPaths": [
-      "C:\\Users\\vadin\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\vadin\\.nuget\\packages"
-    ]
-  }
-}
