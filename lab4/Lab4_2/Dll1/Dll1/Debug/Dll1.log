@@ -1,0 +1,20 @@
+﻿D:\vs\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(519,5): warning MSB8028: промежуточный каталог (Debug\) содержит файлы, которые используются совместно с другим проектом (Dll1.vcxproj).  Это может привести к ошибкам очистки и перестроения.
+  math.cpp
+C:\Users\vadin\Desktop\lab4\Lab4_2\Dll1\Dll1\math.cpp(4,1): warning C4273: Module: несовместимое связывание dll
+C:\Users\vadin\Desktop\lab4\Lab4_2\Dll1\Dll1\math.h(9,35): message : см. предыдущее определение "Module"
+C:\Users\vadin\Desktop\lab4\Lab4_2\Dll1\Dll1\math.cpp(16,1): warning C4273: Max: несовместимое связывание dll
+C:\Users\vadin\Desktop\lab4\Lab4_2\Dll1\Dll1\math.h(10,35): message : см. предыдущее определение "Max"
+C:\Users\vadin\Desktop\lab4\Lab4_2\Dll1\Dll1\math.cpp(28,1): warning C4273: Min: несовместимое связывание dll
+C:\Users\vadin\Desktop\lab4\Lab4_2\Dll1\Dll1\math.h(11,35): message : см. предыдущее определение "Min"
+C:\Users\vadin\Desktop\lab4\Lab4_2\Dll1\Dll1\math.cpp(40,1): warning C4273: Pow: несовместимое связывание dll
+C:\Users\vadin\Desktop\lab4\Lab4_2\Dll1\Dll1\math.h(12,35): message : см. предыдущее определение "Pow"
+C:\Users\vadin\Desktop\lab4\Lab4_2\Dll1\Dll1\math.cpp(52,1): warning C4273: Sin: несовместимое связывание dll
+C:\Users\vadin\Desktop\lab4\Lab4_2\Dll1\Dll1\math.h(13,36): message : см. предыдущее определение "Sin"
+C:\Users\vadin\Desktop\lab4\Lab4_2\Dll1\Dll1\math.cpp(69,1): warning C4273: Cos: несовместимое связывание dll
+C:\Users\vadin\Desktop\lab4\Lab4_2\Dll1\Dll1\math.h(14,36): message : см. предыдущее определение "Cos"
+C:\Users\vadin\Desktop\lab4\Lab4_2\Dll1\Dll1\math.cpp(86,1): warning C4273: Tg: несовместимое связывание dll
+C:\Users\vadin\Desktop\lab4\Lab4_2\Dll1\Dll1\math.h(15,36): message : см. предыдущее определение "Tg"
+C:\Users\vadin\Desktop\lab4\Lab4_2\Dll1\Dll1\math.cpp(98,1): warning C4273: Ctg: несовместимое связывание dll
+C:\Users\vadin\Desktop\lab4\Lab4_2\Dll1\Dll1\math.h(16,36): message : см. предыдущее определение "Ctg"
+     Создается библиотека C:\Users\vadin\Desktop\lab4\Lab4_2\Dll1\Debug\dllmath.lib и объект C:\Users\vadin\Desktop\lab4\Lab4_2\Dll1\Debug\dllmath.exp
+  Dll1.vcxproj -> C:\Users\vadin\Desktop\lab4\Lab4_2\Dll1\Debug\dllmath.dll
