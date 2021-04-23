@@ -14,6 +14,7 @@ namespace Lab4_2
         [DllImport("dllmath.dll")]
         public static extern int Pow(int num, int level);
         [DllImport("dllmath.dll")]
+        
         public static extern double Sin(double x);
         [DllImport("dllmath.dll")]
         public static extern double Cos(double x);
