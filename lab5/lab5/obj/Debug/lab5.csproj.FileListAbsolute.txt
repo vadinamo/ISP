@@ -1,6 +1,0 @@
-/Users/vadinamo/Documents/исп/lab5/lab5/obj/Debug/lab5.csprojAssemblyReference.cache
-/Users/vadinamo/Documents/исп/lab5/lab5/obj/Debug/lab5.csproj.CoreCompileInputs.cache
-/Users/vadinamo/Documents/исп/lab5/lab5/bin/Debug/lab5.exe
-/Users/vadinamo/Documents/исп/lab5/lab5/bin/Debug/lab5.pdb
-/Users/vadinamo/Documents/исп/lab5/lab5/obj/Debug/lab5.exe
-/Users/vadinamo/Documents/исп/lab5/lab5/obj/Debug/lab5.pdb
