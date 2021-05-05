@@ -7,19 +7,19 @@ namespace lab5
     {
         struct Charast
         {
-            public string brand, model, carType, trailer, sideCar;
-            public float engineVolume;
-            public uint yearOfIssue, mileage, topSpeed, doorCount, price, liftingCapacity, wheelCount;
+            public string Brand, Model, CarType, Trailer, SideCar;
+            public float EngineVolume;
+            public uint YearOfIssue, Mileage, TopSpeed, DoorCount, Price, LiftingCapacity, WheelCount;
         }
 
-        static Charast vehicle;
+        static Charast _vehicle;
 
         static uint UintCheck() //проверка ввода uint
         {
             uint a;
             while (!uint.TryParse(Console.ReadLine(), out a))//проверка ввода
             {
-                Console.WriteLine("Ошибка!");
+                Console.WriteLine("Error!");
             }
             return a;
         }
@@ -29,7 +29,7 @@ namespace lab5
             int a;
             while (!int.TryParse(Console.ReadLine(), out a))//проверка ввода
             {
-                Console.WriteLine("Ошибка!");
+                Console.WriteLine("Error!");
             }
             return a;
         }
@@ -39,7 +39,7 @@ namespace lab5
             float a;
             while (!float.TryParse(Console.ReadLine(), out a))//проверка ввода
             {
-                Console.WriteLine("Ошибка!");
+                Console.WriteLine("Error!");
             }
             return a;
         }
@@ -56,79 +56,79 @@ namespace lab5
             }
 
             Console.Write("Brand: ");
-            vehicle.brand = Console.ReadLine();
+            _vehicle.Brand = Console.ReadLine();
             Console.Write("Model: ");
-            vehicle.model = Console.ReadLine();
+            _vehicle.Model = Console.ReadLine();
             Console.Write("Price(BYN): ");
-            vehicle.price = UintCheck();
+            _vehicle.Price = UintCheck();
             Console.Write("Engine volume: ");
-            vehicle.engineVolume = FloatCheck();
+            _vehicle.EngineVolume = FloatCheck();
             Console.Write("Year of issue:");
-            vehicle.yearOfIssue = UintCheck();
+            _vehicle.YearOfIssue = UintCheck();
             Console.Write("Mileage:");
-            vehicle.mileage = UintCheck();
+            _vehicle.Mileage = UintCheck();
             Console.Write("Top speed:");
-            vehicle.topSpeed = UintCheck();
+            _vehicle.TopSpeed = UintCheck();
 
             switch(operation)
             {
                 case 1:
                     Console.Write("Car type:");
-                    vehicle.carType = Console.ReadLine();
+                    _vehicle.CarType = Console.ReadLine();
                     Console.Write("Door count:");
-                    vehicle.doorCount = UintCheck();
+                    _vehicle.DoorCount = UintCheck();
 
                     car.Add(new Car() //добавление объекта класса Car 
                     {
-                        Brand = vehicle.brand,
-                        Model = vehicle.model,
-                        Price = vehicle.price,
-                        EngineVolume = vehicle.engineVolume,
-                        YearOfIssue = vehicle.yearOfIssue,
-                        Mileage = vehicle.mileage,
-                        TopSpeed = vehicle.topSpeed,
-                        CarType = vehicle.carType,
-                        DoorCount = vehicle.doorCount
+                        Brand = _vehicle.Brand,
+                        Model = _vehicle.Model,
+                        Price = _vehicle.Price,
+                        EngineVolume = _vehicle.EngineVolume,
+                        YearOfIssue = _vehicle.YearOfIssue,
+                        Mileage = _vehicle.Mileage,
+                        TopSpeed = _vehicle.TopSpeed,
+                        CarType = _vehicle.CarType,
+                        DoorCount = _vehicle.DoorCount
                     });
                     break;
 
                 case 2:
                     Console.Write("Trailer:");
-                    vehicle.trailer = Console.ReadLine();
+                    _vehicle.Trailer = Console.ReadLine();
                     Console.Write("Lifting capacity:");
-                    vehicle.liftingCapacity = UintCheck();
+                    _vehicle.LiftingCapacity = UintCheck();
 
                     truck.Add(new Truck() //добавление объекта класса Car 
                     {
-                        Brand = vehicle.brand,
-                        Model = vehicle.model,
-                        Price = vehicle.price,
-                        EngineVolume = vehicle.engineVolume,
-                        YearOfIssue = vehicle.yearOfIssue,
-                        Mileage = vehicle.mileage,
-                        TopSpeed = vehicle.topSpeed,
-                        LiftingCapacity = vehicle.liftingCapacity,
-                        Trailer = vehicle.trailer,
+                        Brand = _vehicle.Brand,
+                        Model = _vehicle.Model,
+                        Price = _vehicle.Price,
+                        EngineVolume = _vehicle.EngineVolume,
+                        YearOfIssue = _vehicle.YearOfIssue,
+                        Mileage = _vehicle.Mileage,
+                        TopSpeed = _vehicle.TopSpeed,
+                        LiftingCapacity = _vehicle.LiftingCapacity,
+                        Trailer = _vehicle.Trailer,
                     });
                     break;
 
                 case 3:
                     Console.Write("Sidecar:");
-                    vehicle.sideCar = Console.ReadLine();
+                    _vehicle.SideCar = Console.ReadLine();
                     Console.Write("Wheel count:");
-                    vehicle.wheelCount = UintCheck();
+                    _vehicle.WheelCount = UintCheck();
 
                     motorcycle.Add(new Motorcycle() //добавление объекта класса Car 
                     {
-                        Brand = vehicle.brand,
-                        Model = vehicle.model,
-                        Price = vehicle.price,
-                        EngineVolume = vehicle.engineVolume,
-                        YearOfIssue = vehicle.yearOfIssue,
-                        Mileage = vehicle.mileage,
-                        TopSpeed = vehicle.topSpeed,
-                        SideCar = vehicle.sideCar,
-                        WheelCount = vehicle.wheelCount,
+                        Brand = _vehicle.Brand,
+                        Model = _vehicle.Model,
+                        Price = _vehicle.Price,
+                        EngineVolume = _vehicle.EngineVolume,
+                        YearOfIssue = _vehicle.YearOfIssue,
+                        Mileage = _vehicle.Mileage,
+                        TopSpeed = _vehicle.TopSpeed,
+                        SideCar = _vehicle.SideCar,
+                        WheelCount = _vehicle.WheelCount,
                     });
                     break;
             }
@@ -179,73 +179,73 @@ namespace lab5
             }
 
             Console.Write("Brand: ");
-            vehicle.brand = Console.ReadLine();
+            _vehicle.Brand = Console.ReadLine();
             Console.Write("Model: ");
-            vehicle.model = Console.ReadLine();
+            _vehicle.Model = Console.ReadLine();
             Console.Write("Price(BYN): ");
-            vehicle.price = UintCheck();
+            _vehicle.Price = UintCheck();
             Console.Write("Engine volume: ");
-            vehicle.engineVolume = FloatCheck();
+            _vehicle.EngineVolume = FloatCheck();
             Console.Write("Year of issue:");
-            vehicle.yearOfIssue = UintCheck();
+            _vehicle.YearOfIssue = UintCheck();
             Console.Write("Mileage:");
-            vehicle.mileage = UintCheck();
+            _vehicle.Mileage = UintCheck();
             Console.Write("Top speed:");
-            vehicle.topSpeed = UintCheck();
+            _vehicle.TopSpeed = UintCheck();
 
             switch (operation)
             {
                 case 1:
                     Console.Write("Car type:");
-                    vehicle.carType = Console.ReadLine();
+                    _vehicle.CarType = Console.ReadLine();
                     Console.Write("Door count:");
-                    vehicle.doorCount = UintCheck();
+                    _vehicle.DoorCount = UintCheck();
 
-                    car[number].Brand = vehicle.brand; //изменение полей объекта класса на введенные значения
-                    car[number].Model = vehicle.model;
-                    car[number].Price = vehicle.price;
-                    car[number].EngineVolume = vehicle.engineVolume;
-                    car[number].YearOfIssue = vehicle.yearOfIssue;
-                    car[number].Mileage = vehicle.mileage;
-                    car[number].TopSpeed = vehicle.topSpeed;
-                    car[number].CarType = vehicle.carType;
-                    car[number].DoorCount = vehicle.doorCount;
+                    car[number].Brand = _vehicle.Brand; //изменение полей объекта класса на введенные значения
+                    car[number].Model = _vehicle.Model;
+                    car[number].Price = _vehicle.Price;
+                    car[number].EngineVolume = _vehicle.EngineVolume;
+                    car[number].YearOfIssue = _vehicle.YearOfIssue;
+                    car[number].Mileage = _vehicle.Mileage;
+                    car[number].TopSpeed = _vehicle.TopSpeed;
+                    car[number].CarType = _vehicle.CarType;
+                    car[number].DoorCount = _vehicle.DoorCount;
 
                     break;
 
                 case 2:
                     Console.Write("Trailer:");
-                    vehicle.trailer = Console.ReadLine();
+                    _vehicle.Trailer = Console.ReadLine();
                     Console.Write("Lifting capacity:");
-                    vehicle.liftingCapacity = UintCheck();
+                    _vehicle.LiftingCapacity = UintCheck();
 
-                    truck[number].Brand = vehicle.brand; //изменение полей объекта класса на введенные значения
-                    truck[number].Model = vehicle.model;
-                    truck[number].Price = vehicle.price;
-                    truck[number].EngineVolume = vehicle.engineVolume;
-                    truck[number].YearOfIssue = vehicle.yearOfIssue;
-                    truck[number].Mileage = vehicle.mileage;
-                    truck[number].TopSpeed = vehicle.topSpeed;
-                    truck[number].Trailer = vehicle.trailer;
-                    truck[number].LiftingCapacity = vehicle.liftingCapacity;
+                    truck[number].Brand = _vehicle.Brand; //изменение полей объекта класса на введенные значения
+                    truck[number].Model = _vehicle.Model;
+                    truck[number].Price = _vehicle.Price;
+                    truck[number].EngineVolume = _vehicle.EngineVolume;
+                    truck[number].YearOfIssue = _vehicle.YearOfIssue;
+                    truck[number].Mileage = _vehicle.Mileage;
+                    truck[number].TopSpeed = _vehicle.TopSpeed;
+                    truck[number].Trailer = _vehicle.Trailer;
+                    truck[number].LiftingCapacity = _vehicle.LiftingCapacity;
 
                     break;
 
                 case 3:
                     Console.Write("Sidecar:");
-                    vehicle.sideCar = Console.ReadLine();
+                    _vehicle.SideCar = Console.ReadLine();
                     Console.Write("Wheel count:");
-                    vehicle.wheelCount = UintCheck();
+                    _vehicle.WheelCount = UintCheck();
 
-                    motorcycle[number].Brand = vehicle.brand; //изменение полей объекта класса на введенные значения
-                    motorcycle[number].Model = vehicle.model;
-                    motorcycle[number].Price = vehicle.price;
-                    motorcycle[number].EngineVolume = vehicle.engineVolume;
-                    motorcycle[number].YearOfIssue = vehicle.yearOfIssue;
-                    motorcycle[number].Mileage = vehicle.mileage;
-                    motorcycle[number].TopSpeed = vehicle.topSpeed;
-                    motorcycle[number].SideCar = vehicle.sideCar;
-                    motorcycle[number].WheelCount = vehicle.wheelCount;
+                    motorcycle[number].Brand = _vehicle.Brand; //изменение полей объекта класса на введенные значения
+                    motorcycle[number].Model = _vehicle.Model;
+                    motorcycle[number].Price = _vehicle.Price;
+                    motorcycle[number].EngineVolume = _vehicle.EngineVolume;
+                    motorcycle[number].YearOfIssue = _vehicle.YearOfIssue;
+                    motorcycle[number].Mileage = _vehicle.Mileage;
+                    motorcycle[number].TopSpeed = _vehicle.TopSpeed;
+                    motorcycle[number].SideCar = _vehicle.SideCar;
+                    motorcycle[number].WheelCount = _vehicle.WheelCount;
 
                     break;
             }
@@ -265,7 +265,6 @@ namespace lab5
                     if (number < 0 || number > car.Count)
                     {
                         Console.WriteLine("Incorrect number!");
-                        return;
                     }
 
                     else
@@ -280,7 +279,6 @@ namespace lab5
                     if (number < 0 || number >= truck.Count)
                     {
                         Console.WriteLine("Incorrect number!");
-                        return;
                     }
 
                     else
@@ -295,7 +293,6 @@ namespace lab5
                     if (number < 0 || number >= motorcycle.Count)
                     {
                         Console.WriteLine("Incorrect number!");
-                        return;
                     }
 
                     else
@@ -378,7 +375,7 @@ namespace lab5
             }
         }
 
-        static void Main(string[] args)
+        static void Main()
         {
             List<Car> car = new List<Car>();
             List<Truck> truck = new List<Truck>();

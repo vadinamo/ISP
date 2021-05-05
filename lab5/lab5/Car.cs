@@ -5,10 +5,36 @@ namespace lab5
 {
     class Car : Vehicle
     {
-        public string CarType;
-        public uint DoorCount;
+        private string _carType;
+        private uint _doorCount;
+        
+        public string CarType
+        {
+            get
+            {
+                return _carType;
+            }
 
-        public Car() : base()
+            set
+            {
+                _carType = value;
+            }
+        }
+        
+        public uint DoorCount
+        {
+            get
+            {
+                return _doorCount;
+            }
+
+            set
+            {
+                _doorCount = value;
+            }
+        }
+
+        public Car()
         {
             CarType = "";
             DoorCount = 0;

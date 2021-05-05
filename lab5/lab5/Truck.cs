@@ -5,14 +5,41 @@ namespace lab5
 {
     class Truck : Vehicle
     {
-        public uint LiftingCapacity;
-        public string Trailer;
+        private uint _liftingCapacity;
+        private string _trailer;
+        
+        public uint LiftingCapacity
+        {
+            get
+            {
+                return _liftingCapacity;
+            }
 
-        public Truck() : base()
+            set
+            {
+                _liftingCapacity = value;
+            }
+        }
+        
+        public string Trailer
+        {
+            get
+            {
+                return _trailer;
+            }
+
+            set
+            {
+                _trailer = value;
+            }
+        }
+
+        public Truck()
         {
             LiftingCapacity = 0;
             Trailer = "";
         }
+        
         public Truck(string brand, string model, float engineVolume,
                    uint yearOfIssue, uint mileage, uint topSpeed, uint price,
                   uint liftingCapacity, string trailer) : base(brand, model, engineVolume,

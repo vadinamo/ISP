@@ -1,40 +1,129 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace lab5
 {
     abstract class Vehicle //ТС -> (легковой автомобиль, грузовой автомобиоль, мотоцикл)
     {                     //CarType        LiftingCapacity       WheelCount
-        public string Brand;
-        public string Model;
-        public float EngineVolume;
-        public uint YearOfIssue;
-        public uint Mileage;
-        public uint TopSpeed;
-        public uint Price;
+        private string _brand;
+        private string _model;
+        private float _engineVolume;
+        private uint _yearOfIssue;
+        private uint _mileage;
+        private uint _topSpeed;
+        private uint _price;
 
+        public string Brand
+        {
+            get
+            {
+                return _brand;
+            }
 
+            set
+            {
+                _brand = value;
+            }
+        }
+        
+        public string Model
+        {
+            get
+            {
+                return _model;
+            }
+
+            set
+            {
+                _model = value;
+            }
+        }
+        
+        public float EngineVolume
+        {
+            get
+            {
+                return _engineVolume;
+            }
+
+            set
+            {
+                _engineVolume = value;
+            }
+        }
+        
+        public uint YearOfIssue
+        {
+            get
+            {
+                return _yearOfIssue;
+            }
+
+            set
+            {
+                _yearOfIssue = value;
+            }
+        }
+
+        public uint Mileage
+        {
+            get
+            {
+                return _mileage;
+            }
+
+            set
+            {
+                _mileage = value;
+            }
+        }
+        
+        public uint TopSpeed
+        {
+            get
+            {
+                return _topSpeed;
+            }
+
+            set
+            {
+                _topSpeed = value;
+            }
+        }
+        
+        public uint Price
+        {
+            get
+            {
+                return _price;
+            }
+
+            set
+            {
+                _price = value;
+            }
+        }
+        
         public Vehicle()    //конструктор по умолчанию
         {
-            Brand = "";
-            Model = "";
-            EngineVolume = 0;
-            YearOfIssue = 0;
-            Mileage = 0;
-            TopSpeed = 0;
-            Price = 0;
+            _brand = "";
+            _model = "";
+            _engineVolume = 0;
+            _yearOfIssue = 0;
+            _mileage = 0;
+            _topSpeed = 0;
+            _price = 0;
         }
 
         public Vehicle(string brand, string model, float engineVolume,
                    uint yearOfIssue, uint mileage, uint topSpeed, uint price)
         {
-            Brand = brand;
-            Model = model;
-            EngineVolume = engineVolume;
-            YearOfIssue = yearOfIssue;
-            Mileage = mileage;
-            TopSpeed = topSpeed;
-            Price = price;
+            this._brand = brand;
+            this._model = model;
+            this._engineVolume = engineVolume;
+            this._yearOfIssue = yearOfIssue;
+            this._mileage = mileage;
+            this._topSpeed = topSpeed;
+            this._price = price;
         }
 
         public uint PriceConvert(uint price)
@@ -47,14 +136,14 @@ namespace lab5
 
         public virtual void Information()   //вывод информации по автомобилю
         {
-            Console.WriteLine($"\nBrand: {Brand}\nModel: {Model}\nPrice: {Price}(BYN), {PriceConvert(Price)}(USD)\n" +
-                              $"Engine volume: {EngineVolume}\nYear Of Issue: {YearOfIssue}\n" +
-                              $"Milleage: {Mileage}\nTop Speed: {TopSpeed}");
+            Console.WriteLine($"\nBrand: {_brand}\nModel: {_model}\nPrice: {_price}(BYN), {PriceConvert(_price)}(USD)\n" +
+                              $"Engine volume: {_engineVolume}\nYear Of Issue: {_yearOfIssue}\n" +
+                              $"Milleage: {_mileage}\nTop Speed: {_topSpeed}");
         }
 
         public void Information(int i)
         {
-            Console.WriteLine((i + 1) + $".  {Brand}, {Model}, {PriceConvert(Price)}$");
+            Console.WriteLine((i + 1) + $".  {_brand}, {_model}, {PriceConvert(_price)}$");
         }
     }
 }

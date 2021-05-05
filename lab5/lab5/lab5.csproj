@@ -31,11 +31,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vehicle.cs" />
     <Compile Include="Car.cs" />
     <Compile Include="Truck.cs" />
     <Compile Include="Motorcycle.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

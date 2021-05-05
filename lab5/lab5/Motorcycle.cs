@@ -5,10 +5,36 @@ namespace lab5
 {
     class Motorcycle : Vehicle
     {
-        public uint WheelCount;
-        public string SideCar;
+        private uint _wheelCount;
+        private string _sideCar;
+        
+        public uint WheelCount
+        {
+            get
+            {
+                return _wheelCount;
+            }
 
-        public Motorcycle() : base()
+            set
+            {
+                _wheelCount = value;
+            }
+        }
+        
+        public string SideCar
+        {
+            get
+            {
+                return _sideCar;
+            }
+
+            set
+            {
+                _sideCar = value;
+            }
+        }
+
+        public Motorcycle()
         {
             WheelCount = 0;
             SideCar = "";
