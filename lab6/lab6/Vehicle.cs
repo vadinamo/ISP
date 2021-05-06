@@ -2,26 +2,27 @@ using System;
 
 namespace lab6
 {
+    struct Charast
+    {
+        public string Brand, Model;
+        public float EngineVolume;
+        public uint YearOfIssue, Mileage, TopSpeed, Price;
+    }
+    
     public abstract class Vehicle //ТС -> (легковой автомобиль, грузовой автомобиоль, мотоцикл)
     {                     //CarType        LiftingCapacity       WheelCount
-        private string _brand;
-        private string _model;
-        private float _engineVolume;
-        private uint _yearOfIssue;
-        private uint _mileage;
-        private uint _topSpeed;
-        private uint _price;
+        private Charast _vehicle;
 
         public string Brand
         {
             get
             {
-                return _brand;
+                return _vehicle.Brand;
             }
 
             set
             {
-                _brand = value;
+                _vehicle.Brand = value;
             }
         }
         
@@ -29,12 +30,12 @@ namespace lab6
         {
             get
             {
-                return _model;
+                return _vehicle.Model;
             }
 
             set
             {
-                _model = value;
+                _vehicle.Model = value;
             }
         }
         
@@ -42,12 +43,12 @@ namespace lab6
         {
             get
             {
-                return _engineVolume;
+                return _vehicle.EngineVolume;
             }
 
             set
             {
-                _engineVolume = value;
+                _vehicle.EngineVolume = value;
             }
         }
         
@@ -55,12 +56,12 @@ namespace lab6
         {
             get
             {
-                return _yearOfIssue;
+                return _vehicle.YearOfIssue;
             }
 
             set
             {
-                _yearOfIssue = value;
+                _vehicle.YearOfIssue = value;
             }
         }
 
@@ -68,12 +69,12 @@ namespace lab6
         {
             get
             {
-                return _mileage;
+                return _vehicle.Mileage;
             }
 
             set
             {
-                _mileage = value;
+                _vehicle.Mileage = value;
             }
         }
         
@@ -81,12 +82,12 @@ namespace lab6
         {
             get
             {
-                return _topSpeed;
+                return _vehicle.TopSpeed;
             }
 
             set
             {
-                _topSpeed = value;
+                _vehicle.TopSpeed = value;
             }
         }
         
@@ -94,36 +95,36 @@ namespace lab6
         {
             get
             {
-                return _price;
+                return _vehicle.Price;
             }
 
             set
             {
-                _price = value;
+                _vehicle.Price = value;
             }
         }
         
         public Vehicle()    //конструктор по умолчанию
         {
-            _brand = "";
-            _model = "";
-            _engineVolume = 0;
-            _yearOfIssue = 0;
-            _mileage = 0;
-            _topSpeed = 0;
-            _price = 0;
+            _vehicle.Brand = "";
+            _vehicle.Model = "";
+            _vehicle.EngineVolume = 0;
+            _vehicle.YearOfIssue = 0;
+            _vehicle.Mileage = 0;
+            _vehicle.TopSpeed = 0;
+            _vehicle. Price = 0;
         }
 
         public Vehicle(string brand, string model, float engineVolume,
                    uint yearOfIssue, uint mileage, uint topSpeed, uint price)
         {
-            this._brand = brand;
-            this._model = model;
-            this._engineVolume = engineVolume;
-            this._yearOfIssue = yearOfIssue;
-            this._mileage = mileage;
-            this._topSpeed = topSpeed;
-            this._price = price;
+            _vehicle.Brand = brand;
+            _vehicle.Model = model;
+            _vehicle.EngineVolume = engineVolume;
+            _vehicle.YearOfIssue = yearOfIssue;
+            _vehicle.Mileage = mileage;
+            _vehicle.TopSpeed = topSpeed;
+            _vehicle.Price = price;
         }
 
         public uint PriceConvert(uint price)
@@ -136,14 +137,15 @@ namespace lab6
 
         public virtual void Information()   //вывод информации по автомобилю
         {
-            Console.WriteLine($"\nBrand: {_brand}\nModel: {_model}\nPrice: {_price}(BYN), {PriceConvert(_price)}(USD)\n" +
-                              $"Engine volume: {_engineVolume}\nYear Of Issue: {_yearOfIssue}\n" +
-                              $"Milleage: {_mileage}\nTop Speed: {_topSpeed}");
+            Console.WriteLine(
+                $"\nBrand: {_vehicle.Brand}\nModel: {_vehicle.Model}\nPrice: {_vehicle.Price}(BYN), {PriceConvert(_vehicle.Price)}(USD)\n" +
+                $"Engine volume: {_vehicle.EngineVolume}\nYear Of Issue: {_vehicle.YearOfIssue}\n" +
+                $"Milleage: {_vehicle.Mileage}\nTop Speed: {_vehicle.TopSpeed}");
         }
 
         public void Information(int i)
         {
-            Console.WriteLine((i + 1) + $".  {_brand}, {_model}, {PriceConvert(_price)}$");
+            Console.WriteLine((i + 1) + $".  {_vehicle.Brand}, {_vehicle.Model}, {PriceConvert(_vehicle.Price)}$");
         }
     }
 }

@@ -10,8 +10,8 @@ namespace lab6
             List<Car> car = new List<Car>();
             List<Truck> truck = new List<Truck>();
             List<Motorcycle> motorcycle = new List<Motorcycle>();
-            int pick = -1;
             UserInterface userInterface = new UserInterface();
+            int pick = -1;
             
             while (pick != 0)
             {
