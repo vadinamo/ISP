@@ -7,7 +7,7 @@ namespace lab5
     {
         static string _brand, _model, _carType, _trailer, _sideCar;
         static float _engineVolume;
-        static uint _yearOfIssue, _mileage, _topSpeed, _doorCount, _price, _liftingCapacity, _wheelCount;
+        static uint _yearOfIssue, _mileage, _topSpeed, _doorCount, _price, _liftingCapacity, _wheelCount, _type;
         static uint UintCheck() //проверка ввода uint
         {
             uint a;
@@ -38,7 +38,7 @@ namespace lab5
             return a;
         }
 
-        static void AddVehicle(List<Car> car, List<Truck> truck, List<Motorcycle> motorcycle)
+        static void AddVehicle(List<Vehicle> vehicle)
         { 
             Console.WriteLine("1.Add car.\n2.Add truck.\n3.Add motorcycle.\n");
             uint operation = UintCheck();
@@ -72,7 +72,7 @@ namespace lab5
                     Console.Write("Door count:");
                     _doorCount = UintCheck();
 
-                    car.Add(new Car() //добавление объекта класса Car 
+                    vehicle.Add(new Car() //добавление объекта класса Car 
                     {
                         Brand = _brand,
                         Model = _model,
@@ -82,7 +82,8 @@ namespace lab5
                         Mileage = _mileage,
                         TopSpeed = _topSpeed,
                         CarType = _carType,
-                        DoorCount = _doorCount
+                        DoorCount = _doorCount,
+                        Type = 1
                     });
                     break;
 
@@ -92,7 +93,7 @@ namespace lab5
                     Console.Write("Lifting capacity:");
                     _liftingCapacity = UintCheck();
 
-                    truck.Add(new Truck() //добавление объекта класса Car 
+                    vehicle.Add(new Truck() //добавление объекта класса Car 
                     {
                         Brand = _brand,
                         Model = _model,
@@ -103,6 +104,7 @@ namespace lab5
                         TopSpeed = _topSpeed,
                         LiftingCapacity = _liftingCapacity,
                         Trailer = _trailer,
+                        Type = 2
                     });
                     break;
 
@@ -112,7 +114,7 @@ namespace lab5
                     Console.Write("Wheel count:");
                     _wheelCount = UintCheck();
 
-                    motorcycle.Add(new Motorcycle() //добавление объекта класса Car 
+                    vehicle.Add(new Motorcycle() //добавление объекта класса Car 
                     {
                         Brand = _brand,
                         Model = _model,
@@ -123,257 +125,177 @@ namespace lab5
                         TopSpeed = _topSpeed,
                         SideCar = _sideCar,
                         WheelCount = _wheelCount,
+                        Type = 3
                     });
                     break;
             }
         }
 
-        static void EditVehicle(List<Car> car, List<Truck> truck, List<Motorcycle> motorcycle)
+        static void EditVehicle(List<Vehicle> vehicle)
         { 
-            Console.WriteLine("1.Edit car.\n2.Edit truck.\n3.Edit motorcycle.\n");
-
-            uint operation = UintCheck();
-            if (operation != 1 && operation != 2 && operation != 3) //проверка ввода
+            Console.WriteLine("Enter vehicle number.");
+            int number = IntCheck() - 1;
+            if (number < 0 || number > vehicle.Count)
             {
-                Console.WriteLine("Error!");
-                return;
+                Console.WriteLine("Incorrect number!");
             }
 
+            else
+            {
+                Console.Write("Brand: ");
+                _brand = Console.ReadLine();
+                Console.Write("Model: ");
+                _model = Console.ReadLine();
+                Console.Write("Price(BYN): ");
+                _price = UintCheck();
+                Console.Write("Engine volume: ");
+                _engineVolume = FloatCheck();
+                Console.Write("Year of issue:");
+                _yearOfIssue = UintCheck();
+                Console.Write("Mileage:");
+                _mileage = UintCheck();
+                Console.Write("Top speed:");
+                _topSpeed = UintCheck();
+
+                switch (vehicle[number].Type)
+                {
+                    case 1:
+                        Console.Write("Car type:");
+                        _carType = Console.ReadLine();
+                        Console.Write("Door count:");
+                        _doorCount = UintCheck();
+                        _type = 1;
+                    
+                        vehicle[number] = new Car(_brand, _model, _engineVolume,
+                            _yearOfIssue, _mileage, _topSpeed, _price, _type,
+                            _carType, _doorCount);
+                        break;
+
+                    case 2:
+                        Console.Write("Trailer:");
+                        _trailer = Console.ReadLine();
+                        Console.Write("Lifting capacity:");
+                        _liftingCapacity = UintCheck();
+                        _type = 2;
+
+                        vehicle[number] = new Truck(_brand, _model, _engineVolume,
+                            _yearOfIssue, _mileage, _topSpeed, _price, _type,
+                            _liftingCapacity, _trailer);
+                        break;
+
+                    case 3:
+                        Console.Write("Sidecar:");
+                        _sideCar = Console.ReadLine();
+                        Console.Write("Wheel count:");
+                        _wheelCount = UintCheck();
+                        _type = 3;
+
+                        vehicle[number] = new Motorcycle(_brand, _model, _engineVolume,
+                            _yearOfIssue, _mileage, _topSpeed, _price, _type,
+                            _wheelCount, _sideCar);
+                        break;
+                }
+            }
+        }
+
+        static void DeleteVehicle(List<Vehicle> vehicle)
+        {
             Console.WriteLine("Enter vehicle number.");
             int number = IntCheck() - 1;
 
-            switch(operation)
+            if (number < 0 || number >= vehicle.Count)
             {
-                case 1:
-                    if(number < 0 || number > car.Count)
-                    {
-                        Console.WriteLine("Incorrect number!");
-                        return;
-                    }
-
-                    break;
-
-                case 2:
-                    if (number < 0 || number >= truck.Count)
-                    {
-                        Console.WriteLine("Incorrect number!");
-                        return;
-                    }
-
-                    break;
-
-                case 3:
-                    if (number < 0 || number >= motorcycle.Count)
-                    {
-                        Console.WriteLine("Incorrect number!");
-                        return;
-                    }
-
-                    break;
+                Console.WriteLine("Incorrect number!");
             }
 
-            Console.Write("Brand: ");
-            _brand = Console.ReadLine();
-            Console.Write("Model: ");
-            _model = Console.ReadLine();
-            Console.Write("Price(BYN): ");
-            _price = UintCheck();
-            Console.Write("Engine volume: ");
-            _engineVolume = FloatCheck();
-            Console.Write("Year of issue:");
-            _yearOfIssue = UintCheck();
-            Console.Write("Mileage:");
-            _mileage = UintCheck();
-            Console.Write("Top speed:");
-            _topSpeed = UintCheck();
-
-            switch (operation)
+            else
             {
-                case 1:
-                    Console.Write("Car type:");
-                    _carType = Console.ReadLine();
-                    Console.Write("Door count:");
-                    _doorCount = UintCheck();
-
-                    car[number].Brand = _brand; //изменение полей объекта класса на введенные значения
-                    car[number].Model = _model;
-                    car[number].Price = _price;
-                    car[number].EngineVolume = _engineVolume;
-                    car[number].YearOfIssue = _yearOfIssue;
-                    car[number].Mileage = _mileage;
-                    car[number].TopSpeed = _topSpeed;
-                    car[number].CarType = _carType;
-                    car[number].DoorCount = _doorCount;
-
-                    break;
-
-                case 2:
-                    Console.Write("Trailer:");
-                    _trailer = Console.ReadLine();
-                    Console.Write("Lifting capacity:");
-                    _liftingCapacity = UintCheck();
-
-                    truck[number].Brand = _brand; //изменение полей объекта класса на введенные значения
-                    truck[number].Model = _model;
-                    truck[number].Price = _price;
-                    truck[number].EngineVolume = _engineVolume;
-                    truck[number].YearOfIssue = _yearOfIssue;
-                    truck[number].Mileage = _mileage;
-                    truck[number].TopSpeed = _topSpeed;
-                    truck[number].Trailer = _trailer;
-                    truck[number].LiftingCapacity = _liftingCapacity;
-
-                    break;
-
-                case 3:
-                    Console.Write("Sidecar:");
-                    _sideCar = Console.ReadLine();
-                    Console.Write("Wheel count:");
-                    _wheelCount = UintCheck();
-
-                    motorcycle[number].Brand = _brand; //изменение полей объекта класса на введенные значения
-                    motorcycle[number].Model = _model;
-                    motorcycle[number].Price = _price;
-                    motorcycle[number].EngineVolume = _engineVolume;
-                    motorcycle[number].YearOfIssue = _yearOfIssue;
-                    motorcycle[number].Mileage = _mileage;
-                    motorcycle[number].TopSpeed = _topSpeed;
-                    motorcycle[number].SideCar = _sideCar;
-                    motorcycle[number].WheelCount = _wheelCount;
-
-                    break;
+                vehicle.RemoveAt(number);
+                Console.WriteLine("Success");
             }
+
         }
 
-        static void DeleteVehicle(List<Car> car, List<Truck> truck, List<Motorcycle> motorcycle)
+        static void VehicleInformation(List<Vehicle> vehicle)
         {
-            Console.WriteLine("1.Delete car.\n2.Delete truck.\n3.Delete motorcycle.\n");
-            uint operation = UintCheck();
-
             Console.WriteLine("Enter vehicle number.");
             int number = IntCheck() - 1;
 
-            switch (operation)
+            if (number < 0 || number >= vehicle.Count)
             {
-                case 1:
-                    if (number < 0 || number > car.Count)
-                    {
-                        Console.WriteLine("Incorrect number!");
-                    }
-
-                    else
-                    {
-                        car.RemoveAt(number);
-                        Console.WriteLine("Success");
-                    }
-
-                    break;
-
-                case 2:
-                    if (number < 0 || number >= truck.Count)
-                    {
-                        Console.WriteLine("Incorrect number!");
-                    }
-
-                    else
-                    {
-                        truck.RemoveAt(number);
-                        Console.WriteLine("Success");
-                    }
-
-                    break;
-
-                case 3:
-                    if (number < 0 || number >= motorcycle.Count)
-                    {
-                        Console.WriteLine("Incorrect number!");
-                    }
-
-                    else
-                    {
-                        motorcycle.RemoveAt(number);
-                        Console.WriteLine("Success");
-                    }
-
-                    break;
+                Console.WriteLine("Incorrect number!");
             }
 
-        }
-
-        static void VehicleInformation(List<Car> car, List<Truck> truck, List<Motorcycle> motorcycle)
-        {
-            Console.WriteLine("1.Car information.\n2.Truck information.\n3.Motorcycle information.\n");
-            uint operation = UintCheck();
-            switch (operation)
+            else
             {
-                case 1:
-                    car[0].Information(car);
-                    break;
+                switch (vehicle[number].Type)
+                {
+                    case 1:
+                        Car car = new Car(vehicle[number].Brand, vehicle[number].Model, vehicle[number].EngineVolume,
+                            vehicle[number].YearOfIssue, vehicle[number].Mileage, vehicle[number].TopSpeed, 
+                            vehicle[number].Price, vehicle[number].Type, vehicle[number].CarType, vehicle[number].DoorCount);
+                        
+                        car.Information();
+                        break;
 
-                case 2:
-                    truck[0].Information(truck);
-                    break;
+                    case 2:
+                        Truck truck = new Truck(vehicle[number].Brand, vehicle[number].Model, vehicle[number].EngineVolume,
+                            vehicle[number].YearOfIssue, vehicle[number].Mileage, vehicle[number].TopSpeed, vehicle[number].Price, 
+                            vehicle[number].Type, vehicle[number].LiftingCapacity, vehicle[number].Trailer);
+                        
+                        truck.Information();
+                        break;
 
-                case 3:
-                    motorcycle[0].Information(motorcycle);
-                    break;
+                    case 3:
+                        Motorcycle motorcycle = new Motorcycle(vehicle[number].Brand, vehicle[number].Model, vehicle[number].EngineVolume,
+                            vehicle[number].YearOfIssue, vehicle[number].Mileage, vehicle[number].TopSpeed, vehicle[number].Price, 
+                            vehicle[number].Type, vehicle[number].WheelCount, vehicle[number].SideCar);
+                        motorcycle.Information();
+                        break;
 
-                default:
-                    Console.WriteLine("Error!");
-                    break;
+                    default:
+                        Console.WriteLine("Error!");
+                        break;
+                }
             }
         }
 
-        static void ViewAllVehicles(List<Car> car, List<Truck> truck, List<Motorcycle> motorcycle)
+        static void ViewAllVehicles(List<Vehicle> vehicle)
         {
-            Console.WriteLine("Cars:");
-            if (car.Count != 0)
+            Console.WriteLine("Entered vehicles:");
+            if (vehicle.Count != 0)
             {
-                for (int i = 0; i < car.Count; i++) //вывод марки, модели и цены введенных автомобилей
+                for (int i = 0; i < vehicle.Count; i++) //вывод марки, модели и цены введенных автомобилей
                 {
-                    car[i].Information(i);
+                    switch (vehicle[i].Type)
+                    {
+                        case 1:
+                            Car car = new Car();
+                            car.Information();
+                            break;
+                        
+                        case 2:
+                            Truck truck = new Truck();
+                            truck.Information();
+                            break;
+                        
+                        case 3:
+                            Motorcycle motorcycle = new Motorcycle();
+                            motorcycle.Information();
+                            break;
+                    }
                 }
                 Console.WriteLine();
             }
             else
             {
-                Console.WriteLine("     No cars entered.");
-            }
-
-            Console.WriteLine("Trucks:");
-            if (truck.Count != 0)
-            {
-                for (int i = 0; i < truck.Count; i++) //вывод марки, модели и цены введенных грузовиков
-                { 
-                    truck[i].Information(i);
-                }
-                Console.WriteLine();
-            }
-            else
-            {
-                Console.WriteLine("     No trucks entered.");
-            }
-
-            Console.WriteLine("Motorcycles:");
-            if (motorcycle.Count != 0)
-            {
-                for (int i = 0; i < motorcycle.Count; i++) //вывод марки, модели и цены введенных мотоциклов
-                {
-                    motorcycle[i].Information(i);
-                }
-                Console.WriteLine();
-            }
-            else
-            {
-                Console.WriteLine("     No motorcycles entered.");
+                Console.WriteLine("     No vehicles entered.");
             }
         }
 
         static void Main()
         {
-            List<Car> car = new List<Car>();
-            List<Truck> truck = new List<Truck>();
-            List<Motorcycle> motorcycle = new List<Motorcycle>();
+            List<Vehicle> vehicle = new List<Vehicle>();
             int pick = -1;
 
             while (pick != 0)
@@ -386,27 +308,27 @@ namespace lab5
                 switch (pick)
                 {
                     case 1:
-                        ViewAllVehicles(car, truck, motorcycle);
+                        ViewAllVehicles(vehicle);
 
                         break;
 
                     case 2:
-                        AddVehicle(car, truck, motorcycle);
+                        AddVehicle(vehicle);
 
                         break;
 
                     case 3:
-                        EditVehicle(car, truck, motorcycle);
+                        EditVehicle(vehicle);
 
                         break;
 
                     case 4:
-                        DeleteVehicle(car, truck, motorcycle);
+                        DeleteVehicle(vehicle);
 
                         break;
 
                     case 5:
-                        VehicleInformation(car, truck, motorcycle);
+                        VehicleInformation(vehicle);
 
                         break;
                 }

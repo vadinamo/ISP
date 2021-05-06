@@ -5,35 +5,6 @@ namespace lab5
 {
     class Truck : Vehicle
     {
-        private uint _liftingCapacity;
-        private string _trailer;
-        
-        public uint LiftingCapacity
-        {
-            get
-            {
-                return _liftingCapacity;
-            }
-
-            set
-            {
-                _liftingCapacity = value;
-            }
-        }
-        
-        public string Trailer
-        {
-            get
-            {
-                return _trailer;
-            }
-
-            set
-            {
-                _trailer = value;
-            }
-        }
-
         public Truck()
         {
             LiftingCapacity = 0;
@@ -41,10 +12,10 @@ namespace lab5
         }
         
         public Truck(string brand, string model, float engineVolume,
-                   uint yearOfIssue, uint mileage, uint topSpeed, uint price,
+                   uint yearOfIssue, uint mileage, uint topSpeed, uint price, uint type,
                   uint liftingCapacity, string trailer) : base(brand, model, engineVolume,
                                                         yearOfIssue, mileage,
-                                                        topSpeed, price)
+                                                        topSpeed, price, type)
         {
             LiftingCapacity = liftingCapacity;
             Trailer = trailer;
@@ -52,11 +23,12 @@ namespace lab5
 
         public override void Information()
         {
+            Console.WriteLine("Truck.");
             base.Information();
             Console.WriteLine($"Lifting capacity: {LiftingCapacity}\nTrailer: {Trailer}\n");
         }
 
-        public void Information(List<Truck> truck)
+        public void Information(List<Vehicle> truck)
         {
             Console.WriteLine("Trucks:");
             if (truck.Count > 0)

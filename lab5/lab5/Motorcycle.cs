@@ -5,35 +5,6 @@ namespace lab5
 {
     class Motorcycle : Vehicle
     {
-        private uint _wheelCount;
-        private string _sideCar;
-        
-        public uint WheelCount
-        {
-            get
-            {
-                return _wheelCount;
-            }
-
-            set
-            {
-                _wheelCount = value;
-            }
-        }
-        
-        public string SideCar
-        {
-            get
-            {
-                return _sideCar;
-            }
-
-            set
-            {
-                _sideCar = value;
-            }
-        }
-
         public Motorcycle()
         {
             WheelCount = 0;
@@ -41,10 +12,10 @@ namespace lab5
         }
 
         public Motorcycle(string brand, string model, float engineVolume,
-                   uint yearOfIssue, uint mileage, uint topSpeed, uint price,
+                   uint yearOfIssue, uint mileage, uint topSpeed, uint price, uint type,
                   uint wheelCount, string sideCar) : base(brand, model, engineVolume,
                                                         yearOfIssue, mileage,
-                                                        topSpeed, price)
+                                                        topSpeed, price, type)
         {
             WheelCount = wheelCount;
             SideCar = sideCar;
@@ -52,11 +23,12 @@ namespace lab5
 
         public override void Information()
         {
+            Console.WriteLine("Motorcycle.");
             base.Information();
             Console.WriteLine($"Wheel count: {WheelCount}\nSidecar: {SideCar}\n");
         }
 
-        public void Information(List<Motorcycle> motorcycle)
+        public void Information(List<Vehicle> motorcycle)
         {
             Console.WriteLine("Motorcycles:");
             if (motorcycle.Count > 0)
