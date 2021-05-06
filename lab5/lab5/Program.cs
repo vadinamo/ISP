@@ -135,7 +135,8 @@ namespace lab5
         { 
             Console.WriteLine("Enter vehicle number.");
             int number = IntCheck() - 1;
-            if (number < 0 || number > vehicle.Count)
+
+            if (number < 0 || number >= vehicle.Count)
             {
                 Console.WriteLine("Incorrect number!");
             }
@@ -267,23 +268,7 @@ namespace lab5
             {
                 for (int i = 0; i < vehicle.Count; i++) //вывод марки, модели и цены введенных автомобилей
                 {
-                    switch (vehicle[i].Type)
-                    {
-                        case 1:
-                            Car car = new Car();
-                            car.Information();
-                            break;
-                        
-                        case 2:
-                            Truck truck = new Truck();
-                            truck.Information();
-                            break;
-                        
-                        case 3:
-                            Motorcycle motorcycle = new Motorcycle();
-                            motorcycle.Information();
-                            break;
-                    }
+                    vehicle[0].Information(i);
                 }
                 Console.WriteLine();
             }
