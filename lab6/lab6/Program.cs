@@ -7,44 +7,39 @@ namespace lab6
     {
         static void Main()
         {
-            List<Car> car = new List<Car>();
-            List<Truck> truck = new List<Truck>();
-            List<Motorcycle> motorcycle = new List<Motorcycle>();
+            List<Vehicle> vehicle = new List<Vehicle>();
             UserInterface userInterface = new UserInterface();
             int pick = -1;
-            
             while (pick != 0)
             {
                 Console.WriteLine("1. View all vehicles.\n2. Add vehicle.\n3. Edit vehicle.\n" +
-                                  "4. Delete vehicle.\n5. Vehicle information.\n0. Exit.");
-
+                                  "4. Delete vehicle.\n5. Vehicle information.\n6. Sort by price.\n0. Exit.");
                 pick = userInterface.IntCheck();
 
                 switch (pick)
                 {
                     case 1:
-                        userInterface.ViewAllVehicles(car, truck, motorcycle);
-
+                        userInterface.ViewAllVehicles(vehicle);
                         break;
 
                     case 2:
-                        userInterface.AddVehicle(car, truck, motorcycle);
-
+                        userInterface.AddVehicle(vehicle);
                         break;
 
                     case 3:
-                        userInterface.EditVehicle(car, truck, motorcycle);
-
+                        userInterface.EditVehicle(vehicle);
                         break;
 
                     case 4:
-                        userInterface.DeleteVehicle(car, truck, motorcycle);
-
+                        userInterface.DeleteVehicle(vehicle);
                         break;
 
                     case 5:
-                        userInterface.VehicleInformation(car, truck, motorcycle);
-
+                        userInterface.VehicleInformation(vehicle);
+                        break;
+                    
+                    case 6:
+                        userInterface.SortByPrice(vehicle);
                         break;
                 }
                 Console.WriteLine("\n\nPress any key to continue...");
