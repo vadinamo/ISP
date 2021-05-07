@@ -6,10 +6,27 @@ namespace lab6
     public class UserInterface : IUserInterface, IComparer<Vehicle>
     {
         static string _brand, _model, _carType, _trailer, _sideCar, _type;
-        static float _engineVolume;
+        static double _engineVolume;
         static uint _yearOfIssue, _mileage, _topSpeed, _doorCount, _price, _liftingCapacity, _wheelCount;
         public static UserInterface _userInterface;
-        
+
+        public void Test(List<Vehicle> vehicle)
+        {
+            uint pick = 0;
+            
+            while (pick != 1 && pick != 2)
+            {
+                Console.WriteLine("Add vehicles?\n1.Yes.\n2.No.\n");
+                pick = UintCheck();
+            }
+            
+            TestAdd test = new TestAdd();
+            
+            if (pick == 1)
+            {
+                test.TestVehicles(vehicle);
+            }
+        }
         public int Compare(Vehicle a, Vehicle b)
         {
             if (a != null && b != null && a.Price < b.Price)
@@ -37,10 +54,10 @@ namespace lab6
             return a;
         }
 
-        public float FloatCheck()   ////проверка ввода float
+        public double DoubleCheck()   ////проверка ввода double
         {
-            float a;
-            while (!float.TryParse(Console.ReadLine(), out a))//проверка ввода
+            double a;
+            while (!double.TryParse(Console.ReadLine(), out a))//проверка ввода
             {
                 Console.WriteLine("Error!");
             }
@@ -65,7 +82,7 @@ namespace lab6
             Console.Write("Price(BYN): ");
             _price = UintCheck();
             Console.Write("Engine volume: ");
-            _engineVolume = FloatCheck();
+            _engineVolume = DoubleCheck();
             Console.Write("Year of issue:");
             _yearOfIssue = UintCheck();
             Console.Write("Mileage:");
@@ -159,7 +176,7 @@ namespace lab6
                 Console.Write("Price(BYN): ");
                 _price = UintCheck();
                 Console.Write("Engine volume: ");
-                _engineVolume = FloatCheck();
+                _engineVolume = DoubleCheck();
                 Console.Write("Year of issue:");
                 _yearOfIssue = UintCheck();
                 Console.Write("Mileage:");

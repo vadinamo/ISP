@@ -11,7 +11,7 @@ namespace lab6
             SideCar = "";
         }
 
-        public Motorcycle(string brand, string model, float engineVolume,
+        public Motorcycle(string brand, string model, double engineVolume,
             uint yearOfIssue, uint mileage, uint topSpeed, uint price, string type,
             uint wheelCount, string sideCar) : base(brand, model, engineVolume,
             yearOfIssue, mileage,

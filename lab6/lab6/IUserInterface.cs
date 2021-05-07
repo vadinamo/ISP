@@ -5,7 +5,7 @@ namespace lab6
     {
         uint UintCheck(); //проверка ввода uint
         int IntCheck();   //проверка ввода int
-        float FloatCheck();   ////проверка ввода float
+        double DoubleCheck();   ////проверка ввода float
         void AddVehicle(List<Vehicle> vehicle);
         void EditVehicle(List<Vehicle> vehicle);
         void DeleteVehicle(List<Vehicle> vehicle);

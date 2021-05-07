@@ -10,6 +10,9 @@ namespace lab6
             List<Vehicle> vehicle = new List<Vehicle>();
             UserInterface userInterface = new UserInterface();
             int pick = -1;
+            
+            userInterface.Test(vehicle);
+            
             while (pick != 0)
             {
                 Console.WriteLine("1. View all vehicles.\n2. Add vehicle.\n3. Edit vehicle.\n" +

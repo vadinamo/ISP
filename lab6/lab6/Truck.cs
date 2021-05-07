@@ -11,7 +11,7 @@ namespace lab6
             Trailer = "";
         }
         
-        public Truck(string brand, string model, float engineVolume,
+        public Truck(string brand, string model, double engineVolume,
             uint yearOfIssue, uint mileage, uint topSpeed, uint price, string type,
             uint liftingCapacity, string trailer) : base(brand, model, engineVolume,
             yearOfIssue, mileage,

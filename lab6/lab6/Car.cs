@@ -10,7 +10,7 @@ namespace lab6
             CarType = "";
             DoorCount = 0;
         }
-        public Car(string brand, string model, float engineVolume,
+        public Car(string brand, string model, double engineVolume,
             uint yearOfIssue, uint mileage, uint topSpeed, uint price, String type,
             string carType, uint doorCount) : base(brand, model, engineVolume,
             yearOfIssue, mileage,

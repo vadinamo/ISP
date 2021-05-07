@@ -5,7 +5,7 @@ namespace lab6
     struct Charast
     {
         public string Brand, Model, Type;
-        public float EngineVolume;
+        public double EngineVolume;
         public uint YearOfIssue, Mileage, TopSpeed, Price;
     }
     
@@ -125,7 +125,7 @@ namespace lab6
             }
         }
         
-        public float EngineVolume
+        public double EngineVolume
         {
             get
             {
@@ -215,7 +215,7 @@ namespace lab6
             _vehicle.Type = "";
         }
 
-        public Vehicle(string brand, string model, float engineVolume,
+        public Vehicle(string brand, string model, double engineVolume,
                    uint yearOfIssue, uint mileage, uint topSpeed, uint price, string type)
         {
             _vehicle.Brand = brand;
