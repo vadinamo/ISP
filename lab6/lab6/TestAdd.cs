@@ -21,11 +21,25 @@ namespace lab6
             
             vehicle.Add(new Car() //добавление объекта класса Car 
             {
+                Brand = "Audi",
+                Model = "TT 8J",
+                Price = 25400,
+                EngineVolume = 2,
+                YearOfIssue = 2006,
+                Mileage = 146000,
+                TopSpeed = 240,
+                CarType = "Coupe",
+                DoorCount = 2,
+                Type = "Car"
+            });
+            
+            vehicle.Add(new Car() //добавление объекта класса Car 
+            {
                 Brand = "Honda",
                 Model = "Civic 6",
                 Price = 6500,
                 EngineVolume = 2,
-                YearOfIssue = 2010,
+                YearOfIssue = 1998,
                 Mileage = 201000,
                 TopSpeed = 180,
                 CarType = "Hatchback",

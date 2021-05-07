@@ -16,7 +16,7 @@ namespace lab6
             while (pick != 0)
             {
                 Console.WriteLine("1. View all vehicles.\n2. Add vehicle.\n3. Edit vehicle.\n" +
-                                  "4. Delete vehicle.\n5. Vehicle information.\n6. Sort by price.\n0. Exit.");
+                                  "4. Delete vehicle.\n5. Vehicle information.\n6. Sort list of vehicles by price.\n0. Exit.");
                 pick = userInterface.IntCheck();
 
                 switch (pick)
