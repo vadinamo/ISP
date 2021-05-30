@@ -8,6 +8,8 @@ namespace lab8
         static string _brand, _model, _carType, _trailer, _sideCar, _type;
         static double _engineVolume;
         static uint _yearOfIssue, _mileage, _topSpeed, _doorCount, _price, _liftingCapacity, _wheelCount;
+        private delegate void EventInformation();
+        private event EventInformation eventInformation;
 
         public void Test(List<Vehicle> vehicle)
         {
@@ -91,7 +93,7 @@ namespace lab8
             {
                 while (_engineVolume < 0.1)
                 {
-                    Console.WriteLine("Incorrect wheel count input!");
+                    Console.WriteLine("Incorrect engine volume input!");
                     _engineVolume = DoubleCheck();
                 }
             }
@@ -108,7 +110,7 @@ namespace lab8
             {
                 while (_yearOfIssue < 1885)
                 {
-                    Console.WriteLine("Incorrect wheel count input!");
+                    Console.WriteLine("Incorrect year of issue input!");
                     _yearOfIssue = UIntCheck();
                 }
             }
@@ -178,7 +180,12 @@ namespace lab8
         };
 
         public void AddVehicle(List<Vehicle> vehicle)
-        { 
+        {
+            eventInformation = delegate
+            {
+                Console.WriteLine(" was added successfully.");
+            };
+            
             Console.WriteLine("1.Add car.\n2.Add truck.\n3.Add motorcycle.\n");
             uint operation = UIntCheck();
 
@@ -203,7 +210,7 @@ namespace lab8
                         TopSpeed = _topSpeed,
                         CarType = _carType,
                         DoorCount = _doorCount,
-                        Type = "Car"
+                        Type = _type
                     });
                     break;
 
@@ -220,7 +227,7 @@ namespace lab8
                         TopSpeed = _topSpeed,
                         LiftingCapacity = _liftingCapacity,
                         Trailer = _trailer,
-                        Type = "Truck"
+                        Type = _type
                     });
                     break;
 
@@ -237,14 +244,21 @@ namespace lab8
                         TopSpeed = _topSpeed,
                         SideCar = _sideCar,
                         WheelCount = _wheelCount,
-                        Type = "Motorcycle"
+                        Type = _type
                     });
                     break;
             }
+            Console.Write(_type);
+            eventInformation();
         }
 
         public void EditVehicle(List<Vehicle> vehicle)
         { 
+            eventInformation = delegate
+            {
+                Console.WriteLine(" was edited successfully.");
+            };
+            
             Console.WriteLine("Enter vehicle number.");
             int number = IntCheck() - 1;
 
@@ -282,6 +296,8 @@ namespace lab8
                         break;
                 }
             }
+            Console.Write(_type);
+            eventInformation();
         }
 
         public void DeleteVehicle(List<Vehicle> vehicle)
